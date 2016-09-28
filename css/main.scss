@@ -1,0 +1,103 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+// manifest
+
+// bourbon manifest
+@import "bourbon/bourbon";
+@import "neat/neat";
+@import "base/base";
+
+// my breakpoints
+$mobile-size:em(320);
+$tablet-size:em(720);
+$desktop-size:em(900);
+$largedesktop-size:em(1050);
+
+// Bourbon Neat Breakpoints
+$mobile: new-breakpoint(min-width $mobile-size 4);
+$tablet: new-breakpoint(min-width $tablet-size 8);
+$desktop: new-breakpoint(min-width $desktop-size 12);
+$largedesktop: new-breakpoint(min-width $largedesktop-size 16);
+
+
+
+// custom sass manifest
+@import "custom/base";
+
+
+
+
+
+// some resets and custom overrides
+body {
+  @include margin(0);
+  @include radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 43%, rgba(246,246,246,1) 49%, rgba(246,246,246,1) 100%);
+}
+
+
+
+// navigation overrides
+header.navigation {
+  @extend header.navigation;
+  background-color: none;
+  background: transparent;
+  border: none;
+  color: black;
+
+  .navigation-menu-button, .navigation-menu-button:focus, .navigation-menu-button:hover {
+    color: black;
+  }
+
+
+  .nav-link.standup {
+    @include media($desktop) {
+      display: none;
+    }
+  }
+
+  .standup:hover {
+    color: red;
+  }
+
+  ul li.nav-link {
+    background: transparent;
+
+    a {
+      color: black;
+    }
+  }
+}
+
+
+
+// footer color
+footer.footer-2 {
+  @include linear-gradient(135deg, rgba(213,206,166,1) 0%,rgba(201,193,144,1) 40%,rgba(183,173,112,1) 100%);
+}
+
+// used for control
+.wrapper {
+  @include outer-container(100);
+
+  .main-container {
+    min-height: 600px;
+
+    img {
+      width: 600px;
+      margin: auto;
+      display: block;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 2em;
+    }
+  }
+}
+
+
+
+
+
