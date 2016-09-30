@@ -32,22 +32,14 @@ $largedesktop: new-breakpoint(min-width $largedesktop-size 16);
 
 // some resets and custom overrides
 body {
+  @include outer-container(100);
   @include margin(0);
+  min-height: 800px;
   background: url("../images/floor-1256804_1920.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), rgba(50, 50, 50, 0.35));
-    z-index: -1;
-  }
 }
 
 
@@ -99,34 +91,6 @@ body {
 .wrapper {
 
   .main-container {
-    // background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), rgba(50, 50, 50, 0.35));
-    // @include margin(0em auto 5em auto);
-    // padding-bottom: 1em;
-    // min-height: 800px;
-    // border-radius: 50%;
-
-    .sign {
-      background: linear-gradient(to bottom, rgba(0, 100, 0, 1), rgba(0, 50, 0, 1));
-      border-radius: 20px;
-      border: 2px solid white;
-      @include margin(2em auto 0 auto);
-      width: 300px;
-      position: relative;
-      .hook {
-        margin: 30px auto 32px auto;
-        box-shadow: 0 1px 0 1px white;
-        position: absolute;
-        top: -50px;
-        left: 30%;
-        border: 3px solid #a49c7c;
-        height: 100px;
-        width: 100px;
-        transform: rotate(45deg);
-        content: '';
-        z-index: -1;
-      }
-    }
-    
 
     img {
       padding-top: 3em;
