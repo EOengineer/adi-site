@@ -33,6 +33,11 @@ $largedesktop: new-breakpoint(min-width $largedesktop-size 16);
 // some resets and custom overrides
 body {
   @include margin(0);
+  background: url("../images/floor-1256804_1920.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 
@@ -82,37 +87,42 @@ footer.footer-2 {
 
 // used for control
 .wrapper {
-  @include radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 43%, rgba(246,246,246,1) 49%, rgba(246,246,246,1) 100%);
-  min-height: 550px;
 
   .main-container {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), rgba(100, 100, 100, 0.35));
+    @include margin(2em auto 0 auto);
+    z-index: -1;
+
 
     img {
-      padding-top: 5em;
-      width: 50%;
+      padding-top: 3em;
+      width: 65%;
       margin: auto;
       display: block;
       max-width: 300px;
-
-      @include media($mobile) {
-        padding-top: 8em;
-      }
     }
 
     h1 {
+      line-height: 0.7;
+      z-index: 1;
+      font-family: helvetica;
+      color: white;
       text-align: center;
       padding: 2em;
       margin-top: -20px;
       margin-bottom: 0px;
-      font-weight: 400;
+      font-weight: 200;
     }
 
-    p {
+    h5 {
+      line-height: 0.7;
+      z-index: 1;
+      color: white;
       text-align: center;
       margin-bottom: 0px;
       margin-top: -20px;
       padding-bottom: 2em;
-      font-weight: 400;
+      font-weight: 200;
     }
   }
 }
