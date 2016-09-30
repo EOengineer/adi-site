@@ -90,14 +90,10 @@ body {
 
   .main-container {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), rgba(50, 50, 50, 0.35));
-    @include margin(6em auto 0 auto);
-    @include border-width(5px);
-    @include border-color(black);
+    @include margin(0em auto 5em auto);
     padding-bottom: 1em;
-    @include media($mobile) {
-      width: 350px;
-      border-radius: 10px;
-    }
+    min-height: 800px;
+    // border-radius: 50%;
 
     .sign {
       background: linear-gradient(to bottom, rgba(0, 100, 0, 1), rgba(0, 50, 0, 1));
