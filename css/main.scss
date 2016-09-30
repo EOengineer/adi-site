@@ -43,56 +43,84 @@ body {
 
 
 // navigation overrides
-header.navigation {
-  @extend header.navigation;
-  background-color: #F6F6F6;
-  background: #F6F6F6;
-  border: none;
-  color: black;
+// header.navigation {
+//   @extend header.navigation;
+//   background-color: #F6F6F6;
+//   background: #F6F6F6;
+//   border: none;
+//   color: black;
 
-  .navigation-menu-button, .navigation-menu-button:focus, .navigation-menu-button:hover {
-    color: black;
-  }
-
-
-  .nav-link.standup {
-    @include media($desktop) {
-      display: none;
-    }
-  }
-
-  .standup:hover {
-    color: red;
-  }
-
-  ul li.nav-link {
-    background: transparent;
-
-    a {
-      color: black;
-    }
-  }
-}
+//   .navigation-menu-button, .navigation-menu-button:focus, .navigation-menu-button:hover {
+//     color: black;
+//   }
 
 
+//   .nav-link.standup {
+//     @include media($desktop) {
+//       display: none;
+//     }
+//   }
 
-// footer color
-footer.footer-2 {
-  @include linear-gradient(135deg, rgba(213,206,166,1) 0%,rgba(201,193,144,1) 40%,rgba(183,173,112,1) 100%);
-}
+//   .standup:hover {
+//     color: red;
+//   }
 
-.footer-2 .footer-secondary-links ul.footer-social  {
-  margin-top: 0px;
-}
+//   ul li.nav-link {
+//     background: transparent;
+
+//     a {
+//       color: black;
+//     }
+//   }
+// }
+
+
+
+// // footer color
+// footer.footer-2 {
+//   @include linear-gradient(135deg, rgba(213,206,166,1) 0%,rgba(201,193,144,1) 40%,rgba(183,173,112,1) 100%);
+// }
+
+// .footer-2 .footer-secondary-links ul.footer-social  {
+//   margin-top: 0px;
+// }
 
 // used for control
 .wrapper {
 
   .main-container {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), rgba(100, 100, 100, 0.35));
-    @include margin(2em auto 0 auto);
-    z-index: -1;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), rgba(50, 50, 50, 0.35));
+    @include margin(6em auto 0 auto);
+    @include border-width(5px);
+    @include border-color(black);
+    padding-bottom: 1em;
+    @include media($mobile) {
+      width: 350px;
+      border-radius: 10px;
+    }
 
+    .sign {
+      background: linear-gradient(to bottom, rgba(0, 100, 0, 1), rgba(0, 50, 0, 1));
+      border-radius: 20px;
+      border: 2px solid white;
+      @include margin(2em auto 0 auto);
+      width: 300px;
+      position: relative;
+      .hook {
+        margin: 30px auto 32px auto;
+        box-shadow: 0 1px 0 1px white;
+        position: absolute;
+        top: -50px;
+        left: 30%;
+        border: 3px solid #a49c7c;
+        height: 100px;
+        width: 100px;
+        transform: rotate(45deg);
+        content: '';
+        z-index: -1;
+      }
+    }
+    
 
     img {
       padding-top: 3em;
@@ -103,8 +131,6 @@ footer.footer-2 {
     }
 
     h1 {
-      line-height: 0.7;
-      z-index: 1;
       font-family: helvetica;
       color: white;
       text-align: center;
@@ -115,8 +141,6 @@ footer.footer-2 {
     }
 
     h5 {
-      line-height: 0.7;
-      z-index: 1;
       color: white;
       text-align: center;
       margin-bottom: 0px;
