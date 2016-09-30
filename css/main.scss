@@ -16,7 +16,7 @@ $desktop-size:em(900);
 $largedesktop-size:em(1050);
 
 // Bourbon Neat Breakpoints
-$mobile: new-breakpoint(min-width $mobile-size 4);
+$mobile: new-breakpoint(min-width $mobile-size max-width $tablet-size 4);
 $tablet: new-breakpoint(min-width $tablet-size 8);
 $desktop: new-breakpoint(min-width $desktop-size 12);
 $largedesktop: new-breakpoint(min-width $largedesktop-size 16);
@@ -33,7 +33,6 @@ $largedesktop: new-breakpoint(min-width $largedesktop-size 16);
 // some resets and custom overrides
 body {
   @include margin(0);
-  @include radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 43%, rgba(246,246,246,1) 49%, rgba(246,246,246,1) 100%);
 }
 
 
@@ -41,8 +40,8 @@ body {
 // navigation overrides
 header.navigation {
   @extend header.navigation;
-  background-color: none;
-  background: transparent;
+  background-color: #F6F6F6;
+  background: #F6F6F6;
   border: none;
   color: black;
 
@@ -77,22 +76,43 @@ footer.footer-2 {
   @include linear-gradient(135deg, rgba(213,206,166,1) 0%,rgba(201,193,144,1) 40%,rgba(183,173,112,1) 100%);
 }
 
+.footer-2 .footer-secondary-links ul.footer-social  {
+  margin-top: 0px;
+}
+
 // used for control
 .wrapper {
-  @include outer-container(100);
+  @include radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 43%, rgba(246,246,246,1) 49%, rgba(246,246,246,1) 100%);
+  min-height: 550px;
 
   .main-container {
-    min-height: 600px;
 
     img {
-      width: 600px;
+      padding-top: 5em;
+      width: 50%;
       margin: auto;
       display: block;
+      max-width: 300px;
+
+      @include media($mobile) {
+        padding-top: 8em;
+      }
     }
 
     h1 {
       text-align: center;
       padding: 2em;
+      margin-top: -20px;
+      margin-bottom: 0px;
+      font-weight: 400;
+    }
+
+    p {
+      text-align: center;
+      margin-bottom: 0px;
+      margin-top: -20px;
+      padding-bottom: 2em;
+      font-weight: 400;
     }
   }
 }
